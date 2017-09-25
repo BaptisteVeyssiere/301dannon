@@ -89,7 +89,19 @@ def main() :
     check_param(sys.argv)
     with open(sys.argv[1]) as f :
         words = f.read().split()
-    words = list(map(float, words))
+    try :
+        words = list(map(float, words))
+    except ValueError :
+        print("Error: please enter number")
+        sys.exit(84)
+    if len(words) < 1 :
+        print("%d elements"%len(words))
+        print("select sort:  0 comparisons")
+        print("insertion sort:  0 comparisons")
+        print("bubble sort:  0 comparisons")
+        print("fusion sort:  0 comparisons")
+        print("quicksort:  0 comparisons")
+        sys.exit(0)
     counting_elem(words)
     select_sort(words)
     insertion_sort(words)
