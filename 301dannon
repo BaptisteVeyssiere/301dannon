@@ -7,13 +7,13 @@ count = 0
 def check_param(argv) :
     if len(argv) != 2 :
         print("You wrote %d argument(s), please write a single file name."%(len(argv)-1))
-        sys.exit(1)
+        sys.exit(84)
     if argv[1] == "-h" :
         print("USAGE\n\t   ./301dannon file\n\nDESCRIPTION\n\tfile\tfile that contains the numbers to be sorted, separated by spaces")
         sys.exit(0)
     if not os.path.isfile(argv[1]) :
         print("%s is not a file or doesn't exist."%argv[1])
-        sys.exit(1)
+        sys.exit(84)
     return (0)
 
 def counting_elem(words) :
@@ -96,14 +96,14 @@ def main() :
         words = list(map(float, words))
     except ValueError :
         print("Error: please enter number")
-        sys.exit(1)
+        sys.exit(84)
     if len(words) < 1 :
         print("%d elements"%len(words))
-        print("select sort : 0 comparisons")
-        print("insertion sort : 0 comparisons")
-        print("bubble sort : 0 comparisons")
-        print("fusion sort : 0 comparisons")
-        print("quicksort : 0 comparisons")
+        print("select sort : 0 comparison")
+        print("insertion sort : 0 comparison")
+        print("bubble sort : 0 comparison")
+        print("fusion sort : 0 comparison")
+        print("quicksort : 0 comparison")
         sys.exit(0)
     counting_elem(words)
     select_sort(words)
