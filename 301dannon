@@ -98,7 +98,7 @@ def main() :
         print("Error: please enter number")
         sys.exit(84)
     if len(words) < 2 :
-        print("%d elements"%len(words))
+        print("%d element"%len(words))
         print("select sort : 0 comparison")
         print("insertion sort : 0 comparison")
         print("bubble sort : 0 comparison")
