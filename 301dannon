@@ -30,7 +30,7 @@ def counting_elem(words) :
 
 def select_sort(words) :
     nbr = len(words) * (len(words) - 1) / 2
-    print("select sort :  %d comparisons"%nbr)
+    print("select sort : %d comparisons"%nbr)
 
 def insertion_sort(words) :
     liste = [words[0]]
@@ -46,11 +46,11 @@ def insertion_sort(words) :
             nbr = nbr + j
         liste.insert(j, words[k])
         p = p + 1
-    print("insertion sort :  %d comparisons"%nbr)
+    print("insertion sort : %d comparisons"%nbr)
 
 def bubble_sort(words) :
     nbr = len(words) * (len(words) - 1) / 2
-    print("bubble sort :  %d comparisons"%nbr)
+    print("bubble sort : %d comparisons"%nbr)
 
 def fusion(tmp1, tmp2) :
     global count
@@ -105,11 +105,11 @@ def main() :
         sys.exit(1)
     if len(words) < 1 or is_sort(words) :
         print("%d elements"%len(words))
-        print("select sort :  0 comparisons")
-        print("insertion sort :  0 comparisons")
-        print("bubble sort :  0 comparisons")
-        print("fusion sort :  0 comparisons")
-        print("quicksort :  0 comparisons")
+        print("select sort : 0 comparisons")
+        print("insertion sort : 0 comparisons")
+        print("bubble sort : 0 comparisons")
+        print("fusion sort : 0 comparisons")
+        print("quicksort : 0 comparisons")
         sys.exit(0)
     counting_elem(words)
     select_sort(words)
@@ -117,8 +117,8 @@ def main() :
     sys.setrecursionlimit(10000)
     bubble_sort(words)
     fusion_sort(words)
-    print("fusion sort :  %d comparisons"%count)
-    print("quicksort :  %d comparisons"%quicksort(words))
+    print("fusion sort : %d comparisons"%count)
+    print("quicksort : %d comparisons"%quicksort(words))
 
 if __name__ == "__main__" :
     main()
