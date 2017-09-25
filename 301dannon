@@ -16,6 +16,12 @@ def check_param(argv) :
         sys.exit(1)
     return (0)
 
+def is_sort(words) :
+    for i in range(0, len(words) - 1) :
+        if words[i] >= words[i + 1] :
+            return 0
+    return 1
+
 def counting_elem(words) :
     if len(words) == 1 :
         print("%d element"%len(words))
@@ -97,7 +103,7 @@ def main() :
     except ValueError :
         print("Error: please enter number")
         sys.exit(1)
-    if len(words) < 1 :
+    if len(words) < 1 or is_sort(words) :
         print("%d elements"%len(words))
         print("select sort :  0 comparisons")
         print("insertion sort :  0 comparisons")
@@ -108,6 +114,7 @@ def main() :
     counting_elem(words)
     select_sort(words)
     insertion_sort(words)
+    sys.setrecursionlimit(10000)
     bubble_sort(words)
     fusion_sort(words)
     print("fusion sort :  %d comparisons"%count)
